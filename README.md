@@ -1,3 +1,3 @@
-# targety
+# Why this repo?
 
-Flutter multiple targets setup
+Sample project for set multiple targets in Flutter App.

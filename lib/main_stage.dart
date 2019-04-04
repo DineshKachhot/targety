@@ -5,12 +5,12 @@ import 'package:targety/home.dart';
 void main() {
   AppConfig().setAppConfig(
     appEnvironment: AppEnvironment.PROD,
-    appName: 'Targety',
-    description: 'This is a Production version of Targety',
-    baseUrl: 'https://appname.com/api',
+    appName: 'Targety Stage',
+    description: 'This is a Staging version of Targety',
+    baseUrl: 'https://stage-appname.com/api',
     themeData: ThemeData(
-      primarySwatch: Colors.blue,
-      primaryColor: Colors.deepOrange,
+      primarySwatch: Colors.purple,
+      primaryColor: Colors.deepPurple,
     )
   );
   runApp(MyApp());
@@ -27,5 +27,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-

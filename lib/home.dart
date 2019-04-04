@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:targety/config/app_config.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -22,11 +23,10 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Base url - https://myapp.com/api',
+              AppConfig().description,
             ),
             Text(
-              'App Environment - Live',
-              style: Theme.of(context).textTheme.display1,
+              'Base url - ${AppConfig().baseUrl}',
             ),
           ],
         ),

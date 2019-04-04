@@ -4,13 +4,13 @@ import 'package:targety/home.dart';
 
 void main() {
   AppConfig().setAppConfig(
-    appEnvironment: AppEnvironment.PROD,
-    appName: 'Targety',
-    description: 'This is a Production version of Targety',
-    baseUrl: 'https://appname.com/api',
+    appEnvironment: AppEnvironment.DEV,
+    appName: 'Targety Dev',
+    description: 'This is a Development version of Targety',
+    baseUrl: 'https://dev-appname.com/api',
     themeData: ThemeData(
-      primarySwatch: Colors.blue,
-      primaryColor: Colors.deepOrange,
+      primarySwatch: Colors.red,
+      primaryColor: Colors.blueGrey,
     )
   );
   runApp(MyApp());

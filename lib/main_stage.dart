@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:targety/config/app_config.dart';
-import 'package:targety/home.dart';
+import 'package:targety/ui/pages/my_app.dart';
 
 void main() {
-  AppConfig().setAppConfig(
+  var appConfig = AppConfig(
     appEnvironment: AppEnvironment.PROD,
     appName: 'Targety Stage',
     description: 'This is a Staging version of Targety',
@@ -11,19 +11,8 @@ void main() {
     themeData: ThemeData(
       primarySwatch: Colors.purple,
       primaryColor: Colors.deepPurple,
-    )
+    ),
+    child: MyApp(),
   );
-  runApp(MyApp());
+  runApp(appConfig);
 } 
-
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: AppConfig().appName,
-      theme: AppConfig().themeData,
-      home: MyHomePage(title: AppConfig().appName),
-    );
-  }
-}

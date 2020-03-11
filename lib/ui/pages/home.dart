@@ -23,10 +23,10 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              AppConfig().description,
+              AppConfig.of(context).description,
             ),
             Text(
-              'Base url - ${AppConfig().baseUrl}',
+              'Base url - ${AppConfig.of(context).baseUrl}',
             ),
           ],
         ),

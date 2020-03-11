@@ -1,30 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:meta/meta.dart';
 
 enum AppEnvironment {DEV, STAGE, PROD}
 
-class AppConfig {
-  // Singleton object
-  static final AppConfig _singleton =
-      new AppConfig._internal();
+class AppConfig extends InheritedWidget {
+  final AppEnvironment appEnvironment;
+  final String appName;
+  final String description;
+  final String baseUrl;
+  final ThemeData themeData;
+  final Widget child;
 
-  factory AppConfig() {
-    return _singleton;
+  AppConfig({
+    @required this.appEnvironment, 
+    @required this.appName, 
+    @required this.description, 
+    @required this.baseUrl, 
+    @required this.themeData,
+    @required this.child,
+    });
+
+  static AppConfig of(BuildContext context) {
+    return context.dependOnInheritedWidgetOfExactType();
   }
 
-  AppConfig._internal();
-
-  AppEnvironment appEnvironment;
-  String appName;
-  String description;
-  String baseUrl;
-  ThemeData themeData;
-
-  // Set app configuration with single function
-  void setAppConfig({AppEnvironment appEnvironment, String appName, String description, String baseUrl, ThemeData themeData}) {
-    this.appEnvironment   = appEnvironment;
-    this.appName          = appName;
-    this.description      = description;
-    this.baseUrl          = baseUrl;
-    this.themeData        = themeData;
-  }
+  @override
+  bool updateShouldNotify(InheritedWidget oldWidget) => false;
 }
